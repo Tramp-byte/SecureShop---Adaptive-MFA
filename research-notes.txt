@@ -1,0 +1,38 @@
+PEMETAAN PROTOTIPE TERHADAP PENELITIAN
+
+1. Authentication:
+Password sebagai faktor pertama.
+OTP sebagai faktor kedua.
+Extra verification untuk kondisi risiko tinggi.
+
+2. Adaptive risk:
+Risk score digunakan sebagai decision engine.
+Low risk: Password + OTP.
+High risk: Password + Risk Check + Extra Verification + OTP.
+
+3. Security controls:
+OTP expiry 60 detik.
+Max 5 OTP attempts.
+Resend OTP.
+Rate limit/lockout pada percobaan berulang.
+Audit activity.
+
+4. Test scenarios:
+Normal login
+Wrong password
+Wrong OTP
+Expired OTP
+Resend OTP
+Rate limit
+High-risk login
+Audit log
+
+5. CIA:
+Confidentiality: authentication layers.
+Integrity: audit trail.
+Availability: rate limit/lockout.
+
+6. Usability:
+UI dibuat dengan alur singkat dan progress indicator agar penambahan MFA tidak terlalu membebani pengguna.
+
+Catatan: Ini adalah prototype akademik, bukan sistem produksi.
